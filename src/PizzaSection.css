@@ -1,0 +1,135 @@
+.pizza-section {
+  background: #1c1c1c;
+  color: #ddd;
+  padding: 100px 8%;
+  font-family: "Georgia", serif;
+}
+
+/* ===== OUR PIZZA ===== */
+
+.our-pizza {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 120px;
+}
+
+.pizza-left img {
+  width: 420px;
+  border-radius: 50%;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+.pizza-right h2 {
+  font-size: 42px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.pizza-right p {
+  color: #aaa;
+  line-height: 1.6;
+}
+
+.ingredients {
+  display: flex;
+  gap: 50px;
+  margin: 30px 0;
+}
+
+.ingredients ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ingredients li {
+  margin-bottom: 10px;
+}
+
+.outline-btn {
+  padding: 10px 25px;
+  background: transparent;
+  border: 1px solid #ff7a00;
+  color: #ff7a00;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.outline-btn:hover {
+  background: #ff7a00;
+  color: white;
+}
+
+/* ===== ORDER ONLINE ===== */
+
+.order-title {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 60px;
+  color: white;
+}
+
+.pizza-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.pizza-card {
+  background: transparent;
+  text-align: center;
+  width: 30%;
+}
+
+.pizza-card img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.pizza-card h3 {
+  color: white;
+  margin-bottom: 8px;
+}
+
+.toppings {
+  color: #ff7a00;
+  font-size: 14px;
+}
+
+.desc {
+  font-size: 14px;
+  color: #aaa;
+  margin: 15px 0;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+}
+
+.card-bottom span {
+  background: #ff7a00;
+  padding: 6px 15px;
+  color: white;
+  font-weight: bold;
+}
+
+.card-bottom button {
+  background: black;
+  border: 1px solid #ff7a00;
+  color: #ff7a00;
+  padding: 6px 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card-bottom button:hover {
+  background: #ff7a00;
+  color: white;
+}

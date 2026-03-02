@@ -1,52 +1,56 @@
-import pizzas from "./data/pizzas"
-import PizzaCard from "./components/PizzaCard"
-import "./App.css"
+import "./App.css";
 
 function App() {
-
-  const addToCart = (pizza) => {
-    alert(`${pizza.name} added to cart!`)
-  }
-
   return (
-    <>
+    <div className="hero-wrapper">
+
       {/* NAVBAR */}
       <nav className="navbar">
-        <div className="logo">🍕 PizzaHub</div>
+        <div className="logo">YOU PIZZA</div>
+
+        <div className="search-bar">
+          <input type="text" placeholder="Search..." />
+        </div>
+
         <ul className="nav-links">
-          <li>Home</li>
-          <li>Menu</li>
-          <li>Contact</li>
+          <li className="active">HOME</li>
+          <li>SPECIALTIES</li>
+          <li>MENU</li>
+          <li>CONTACT</li>
+          <li>SIGN IN</li>
         </ul>
       </nav>
 
-      {/* HERO SECTION */}
-      <header className="hero">
-        <h1>Delicious Pizzas Delivered Fast</h1>
-        <p>Fresh • Hot • Tasty</p>
-      </header>
+      {/* HERO CONTENT */}
+      <div className="hero-content">
+        <div className="left">
+          <h2>CHOOSE YOUR IDEAL<br />PORTION OR SIZE</h2>
 
-      {/* PIZZA SECTION */}
-      <section className="container">
-        <h2 className="section-title">Our Menu</h2>
+          <h1>30% OFF</h1>
 
-        <div className="pizza-grid">
-          {pizzas.map((pizza) => (
-            <PizzaCard
-              key={pizza.id}
-              pizza={pizza}
-              addToCart={addToCart}
-            />
-          ))}
+          <div className="discount">DISCOUNT ONLINE</div>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed diam nonummy nibh euismod tincidunt ut laoreet.
+          </p>
+
+         <div className="delivery-cloud">
+  <span>DELIVERY</span>
+  <p>+34 1980 2655</p>
+</div>
+
+          <button className="order-btn">ORDER NOW</button>
         </div>
-      </section>
 
-      {/* FOOTER */}
-      <footer className="footer">
-        <p>© 2026 PizzaHub | All Rights Reserved</p>
-      </footer>
-    </>
-  )
+        <div className="right">
+          <img
+           
+          />
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;

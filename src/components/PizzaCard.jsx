@@ -8,10 +8,10 @@ function PizzaCard({ pizza, addToCart }) {
         className="add-btn"
         onClick={() => addToCart(pizza)}
       >
-        Add to Cart
+        ADD TO CART
       </button>
     </div>
-  )
+  );
 }
 
-export default PizzaCard
+export default PizzaCard;

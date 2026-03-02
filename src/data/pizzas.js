@@ -17,6 +17,6 @@ const pizzas = [
     price: 249,
     image: "https://images.unsplash.com/photo-1594007654729-407eedc4be65"
   }
-]
+];
 
-export default pizzas
+export default pizzas;
