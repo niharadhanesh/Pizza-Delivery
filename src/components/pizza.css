@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Great+Vibes&display=swap');
+
+/* ================= MAIN SECTION ================= */
+
+.pizza-section {
+  background: #1e1e1e url("/media/chalk-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 120px 8%;
+  position: relative;
+  overflow: hidden; /* prevents slice overflow issues */
+}
+
+/* ================= SECTION TITLES ================= */
+
+.section-title {
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 52px;
+  margin-bottom: 70px;
+  color: white;
+}
+
+/* ================= OUR PIZZA ================= */
+
+.top-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 120px;
+}
+
+.left-img img {
+  width: 100%;
+  max-width: 500px;
+  transform: rotate(90deg);
+}
+
+.right-text {
+  max-width: 500px;
+}
+
+.description {
+  color: #bbb;
+  margin-bottom: 25px;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.ingredients-list {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 25px;
+}
+
+.ingredients-list li {
+  list-style: disc;
+  margin-bottom: 8px;
+  color: #ddd;
+}
+
+.more-btn {
+  background: transparent;
+  border: 1px solid #ff7a00;
+  color: #ff7a00;
+  padding: 12px 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.more-btn:hover {
+  background: #ff7a00;
+  color: black;
+}
+
+/* Cutter */
+
+.cutter {
+  position: absolute;
+  right: -80px;
+  width: 240px;
+  opacity: 0.9;
+}
+
+/* ================= ORDER ONLINE ================= */
+
+.order-wrapper {
+  margin-top: 100px;
+  position: relative;
+}
+
+/* 🔥 MEDIUM / LARGE SLICES */
+
+.slice-left {
+  position: absolute;
+  left: -20px;
+  top: -40px;
+  width: 180px;      /* 🔥 Increased */
+  z-index: 1;
+}
+
+.slice-right {
+  position: absolute;
+  right: -20px;
+  top: -40px;
+  width: 180px;      /* 🔥 Increased */
+  transform: rotate(180deg);
+  z-index: 1;
+}
+
+/* Pizza Cards Grid */
+
+.pizza-grid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* 🔥 makes all cards equal height */
+  gap: 60px;
+}
+
+.pizza-card {
+  width: 260px;
+  text-align: center;
+
+  display: flex;              /* 🔥 important */
+  flex-direction: column;     /* 🔥 stack items vertically */
+  justify-content: space-between; /* 🔥 equal spacing */
+}
+
+.pizza-img {
+  width: 220px;
+  height: 220px;        /* 🔥 fixed height */
+  object-fit: cover;    /* 🔥 keeps image proportional */
+  border-radius: 50%;
+  margin: 0 auto 18px auto;
+}
+
+.pizza-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin-bottom: 10px;
+  min-height: 28px;  /* 🔥 keeps text aligned */
+}
+
+.ingredients {
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 18px;
+  min-height: 40px;  /* 🔥 equal description space */
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: auto;   /* 🔥 pushes buttons to bottom */
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.price {
+  background: #ff7a00;
+  padding: 6px 14px;
+  font-weight: bold;
+  color: black;
+}
+
+.add-btn {
+  background: #ff7a00;
+  color: black;
+  padding: 6px 14px;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+}
+.decor-line {
+  position: relative;
+  width: 90%;
+  margin: 70px auto;
+  border-top: 1px solid #666;
+}
+
+.decor-line::before,
+.decor-line::after {
+  content: "❦";
+  position: absolute;
+  top: -12px;
+  font-size: 18px;
+  color: #666;
+}
+
+.decor-line::before {
+  left: -10px;
+}
+
+.decor-line::after {
+  right: -10px;
+  transform: scaleX(-1);
+}

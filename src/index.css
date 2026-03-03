@@ -5,16 +5,17 @@
   box-sizing: border-box;
 }
 
-/* REMOVE VITE CENTERING */
-body {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  min-height: 100vh;
+/* BODY */
+html, body {
   width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;   /* allow vertical scroll */
+  scroll-behavior: smooth;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: #f4f6f8;
-  overflow-x: hidden;
 }
 
-/* REMOVE ROOT DARK THEME */
+/* ROOT */
 :root {
   line-height: 1.5;
   font-weight: 400;
@@ -30,4 +31,5 @@ a {
 button {
   font-family: inherit;
   cursor: pointer;
+  border: none;
 }

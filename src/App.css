@@ -5,19 +5,20 @@ body {
   font-family: 'Oswald', sans-serif;
 }
 
-/* FULL HERO BACKGROUND */
+/* ================= HERO WRAPPER ================= */
 
 .hero-wrapper {
-  min-height: 100vh;
+  min-height: 100vh;   /* keep full screen */
   background: url("https://images.unsplash.com/photo-1513104890138-7c749659a591");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   color: white;
   padding: 0 6%;
 }
 
-/* LIGHT DARK OVERLAY (NOT TOO DARK) */
+/* Overlay */
 .hero-wrapper::before {
   content: "";
   position: absolute;
@@ -25,6 +26,7 @@ body {
   background: rgba(0,0,0,0.55);
 }
 
+/* Keep content above overlay */
 .navbar,
 .hero-content {
   position: relative;
@@ -69,7 +71,6 @@ body {
   transition: 0.3s;
 }
 
-/* ORANGE ACTIVE PILL */
 .nav-links .active {
   background: orange;
   padding: 6px 18px;
@@ -82,13 +83,14 @@ body {
   color: orange;
 }
 
-/* ================= HERO ================= */
+/* ================= HERO CONTENT ================= */
 
 .hero-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 85vh;
+  padding: 60px 0 80px 0;   /* remove fixed height */
+  flex-wrap: wrap;
 }
 
 /* LEFT SIDE */
@@ -148,10 +150,11 @@ body {
   background: #ff9800;
 }
 
-/* RIGHT SIDE PIZZA IMAGE */
+/* RIGHT SIDE */
 
 .right img {
   width: 550px;
+  max-width: 100%;
   border-radius: 50%;
 }
 
@@ -170,5 +173,9 @@ body {
 
   .search-bar {
     display: none;
+  }
+
+  .left h1 {
+    font-size: 60px;
   }
 }
