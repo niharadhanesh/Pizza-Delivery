@@ -5,7 +5,9 @@ function PizzaCard({ pizza, addToCart }) {
 
       <h3 className="pizza-name">{pizza.name}</h3>
 
-      <p className="ingredients">{pizza.ingredients}</p>
+      <p className="pizza-ingredients">
+        {pizza.ingredients}
+      </p>
 
       <div className="bottom-row">
         <span className="price">₹{pizza.price}</span>

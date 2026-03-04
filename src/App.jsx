@@ -1,5 +1,6 @@
 import "./App.css";
 import PizzaSection from "./components/PizzaSection";
+import GalleryContactSection from "./components/GalleryContactSection"; // ✅ NEW
 import pizzas from "./data/pizzas";
 
 function App() {
@@ -51,13 +52,14 @@ function App() {
 
             <button className="order-btn">ORDER NOW</button>
           </div>
-
-         
         </div>
       </div>
 
-      {/* 🔥 PIZZA SECTION BELOW HERO */}
+      {/* 🔥 PIZZA SECTION */}
       <PizzaSection pizzas={pizzas} addToCart={addToCart} />
+
+      {/* 🔥 NEW GALLERY + CONTACT SECTION */}
+      <GalleryContactSection />
 
     </>
   );

@@ -48,26 +48,33 @@ function PizzaSection({ pizzas, addToCart }) {
         </div>
       </div>
 
-      {/* ===== ORDER ONLINE ===== */}
+            {/* ===== ORDER ONLINE ===== */}
       <div className="order-wrapper">
         <h2 className="section-title">Order Online</h2>
 
         <img src="/media/slices.png" className="slice-left" alt="slice" />
         <img src="/media/slices.png" className="slice-right" alt="slice" />
 
-        <div className="pizza-grid">
-          {pizzas.map((pizza) => (
-            <PizzaCard
-              key={pizza.id}
-              pizza={pizza}
-              addToCart={addToCart}
-            />
-          ))}
+        {/* NEW SLIDER CONTAINER */}
+        <div className="slider-container">
+          
+          <button className="arrow left-arrow">&#10094;</button>
+
+          <div className="pizza-grid">
+            {pizzas.map((pizza) => (
+              <PizzaCard
+                key={pizza.id}
+                pizza={pizza}
+                addToCart={addToCart}
+              />
+            ))}
+          </div>
+
+          <button className="arrow right-arrow">&#10095;</button>
+
         </div>
       </div>
-
-      {/* Decorative Bottom Line */}
-      <div className="decor-line bottom-line"></div>
+     
 
     </section>
   );

@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+/* ================= MAIN SECTION ================= */
+
+.gallery-contact-section {
+  background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+              url("/media/chalk-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+   padding: 80px 8% 120px 8%;
+}
+
+/* ================= SCRIPT TITLE ================= */
+
+.script-title {
+  font-family: 'Great Vibes', cursive;
+  text-align: center;
+  font-size: 60px;
+  margin-bottom: 60px;
+}
+
+/* ================= DECOR LINE ================= */
+
+.decor-line {
+  width: 85%;
+  margin: 80px auto;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  position: relative;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Dots */
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 40px 0;
+}
+
+.slider-dots span {
+  width: 10px;
+  height: 10px;
+  background: #aaa;
+  border-radius: 50%;
+}
+
+.slider-dots .active {
+  background: #ff7a00;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+/* LEFT SIDE */
+
+.contact-left {
+  flex: 1;
+}
+
+.contact-details h3,
+.contact-form h3 {
+  margin-bottom: 20px;
+}
+
+.contact-details p {
+  margin-bottom: 8px;
+  color: #ccc;
+}
+
+/* FORM */
+
+.contact-form {
+  margin-top: 40px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 12px;
+  color: white;
+}
+
+.contact-form textarea {
+  height: 120px;
+  margin-bottom: 20px;
+}
+
+.contact-form button {
+  background: #ff7a00;
+  border: none;
+  padding: 12px 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #ff5200;
+}
+
+/* ================= MAP ================= */
+
+.contact-map {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.map-frame {
+  background: #8b5a2b;
+  padding: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.map-frame img {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+}

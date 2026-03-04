@@ -3,196 +3,271 @@
 /* ================= MAIN SECTION ================= */
 
 .pizza-section {
-  background: #1e1e1e url("/media/chalk-bg.jpg");
+  background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+              url("/media/chalk-bg.jpg");
   background-size: cover;
   background-position: center;
   color: white;
-  padding: 120px 8%;
+ padding: 140px 8% 80px 8%; /* reduced bottom space */
   position: relative;
-  overflow: hidden; /* prevents slice overflow issues */
+  overflow: hidden;
 }
 
-/* ================= SECTION TITLES ================= */
+/* ================= SECTION TITLE ================= */
 
 .section-title {
   text-align: center;
   font-family: 'Great Vibes', cursive;
-  font-size: 52px;
-  margin-bottom: 70px;
-  color: white;
+  font-size: 60px;
+  margin-bottom: 90px;
+  color: #fff;
+  letter-spacing: 2px;
+  position: relative;
 }
 
-/* ================= OUR PIZZA ================= */
+.section-title::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  background: #ff7a00;
+  margin: 20px auto 0;
+}
+
+/* ================= OUR PIZZA TOP SECTION ================= */
 
 .top-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
-  margin-bottom: 120px;
+  margin-bottom: 150px;
+  gap: 60px;
 }
 
 .left-img img {
   width: 100%;
-  max-width: 500px;
+  max-width: 520px;
   transform: rotate(90deg);
+  transition: 0.5s ease;
+}
+
+.left-img img:hover {
+  transform: rotate(90deg) scale(1.05);
 }
 
 .right-text {
-  max-width: 500px;
+  max-width: 520px;
 }
 
 .description {
-  color: #bbb;
-  margin-bottom: 25px;
-  line-height: 1.7;
-  font-size: 15px;
+  color: #ccc;
+  margin-bottom: 30px;
+  line-height: 1.8;
+  font-size: 16px;
 }
 
 .ingredients-list {
   display: flex;
-  gap: 50px;
-  margin-bottom: 25px;
+  gap: 60px;
+  margin-bottom: 35px;
 }
 
 .ingredients-list li {
   list-style: disc;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: #ddd;
+  transition: 0.3s;
+}
+
+.ingredients-list li:hover {
+  color: #ff7a00;
+  transform: translateX(5px);
 }
 
 .more-btn {
   background: transparent;
-  border: 1px solid #ff7a00;
+  border: 2px solid #ff7a00;
   color: #ff7a00;
-  padding: 12px 25px;
+  padding: 14px 30px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.4s;
   font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .more-btn:hover {
   background: #ff7a00;
   color: black;
+  box-shadow: 0 10px 25px rgba(255,122,0,0.4);
 }
 
-/* Cutter */
+/* ================= CUTTER ================= */
 
 .cutter {
   position: absolute;
-  right: -80px;
-  width: 240px;
-  opacity: 0.9;
+  right: -60px;
+  width: 260px;
+  opacity: 0.15;
+  pointer-events: none;
 }
 
 /* ================= ORDER ONLINE ================= */
 
 .order-wrapper {
-  margin-top: 100px;
+  margin-top: 120px;
   position: relative;
 }
 
-/* 🔥 MEDIUM / LARGE SLICES */
+/* Decorative Slices */
+
+.slice-left,
+.slice-right {
+  position: absolute;
+  width: 200px;
+  opacity: 0.8;
+  z-index: 0;
+}
 
 .slice-left {
-  position: absolute;
-  left: -20px;
-  top: -40px;
-  width: 180px;      /* 🔥 Increased */
-  z-index: 1;
+  left: -40px;
+  top: -50px;
+  transform: rotate(-15deg);
 }
 
 .slice-right {
-  position: absolute;
-  right: -20px;
-  top: -40px;
-  width: 180px;      /* 🔥 Increased */
-  transform: rotate(180deg);
-  z-index: 1;
+  right: -40px;
+  top: -50px;
+  transform: rotate(195deg);
 }
 
-/* Pizza Cards Grid */
+/* ================= PIZZA GRID ================= */
 
 .pizza-grid {
   display: flex;
   justify-content: center;
-  align-items: stretch; /* 🔥 makes all cards equal height */
-  gap: 60px;
+  align-items: stretch;
+  gap: 50px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
 }
+
+/* ================= MODERN GLASS CARD ================= */
 
 .pizza-card {
-  width: 260px;
+  width: 280px;
+  padding: 30px 20px;
   text-align: center;
 
-  display: flex;              /* 🔥 important */
-  flex-direction: column;     /* 🔥 stack items vertically */
-  justify-content: space-between; /* 🔥 equal spacing */
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.08);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: 0.4s ease;
 }
+
+.pizza-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 25px 40px rgba(0,0,0,0.6);
+  border-color: rgba(255,122,0,0.4);
+}
+
+/* ================= PIZZA IMAGE ================= */
 
 .pizza-img {
   width: 220px;
-  height: 220px;        /* 🔥 fixed height */
-  object-fit: cover;    /* 🔥 keeps image proportional */
+  height: 220px;
+  object-fit: cover;
   border-radius: 50%;
-  margin: 0 auto 18px auto;
+  margin: 0 auto 20px auto;
+  transition: 0.4s ease;
 }
+
+.pizza-card:hover .pizza-img {
+  transform: scale(1.08) rotate(8deg);
+}
+
+/* ================= TEXT ================= */
 
 .pizza-name {
   font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  margin-bottom: 10px;
-  min-height: 28px;  /* 🔥 keeps text aligned */
+  font-size: 24px;
+  margin-bottom: 12px;
+  min-height: 28px;
+  color: #fff;
 }
 
-.ingredients {
-  color: #aaa;
+/* ================= INGREDIENT TEXT ================= */
+
+.pizza-ingredients {
+  color: #ff7a00;   /* Same as button */
   font-size: 14px;
-  margin-bottom: 18px;
-  min-height: 40px;  /* 🔥 equal description space */
+  margin-bottom: 20px;
+  min-height: 45px;
+  line-height: 1.6;
+  font-weight: 500;
 }
+
+/* ================= BOTTOM ROW ================= */
 
 .bottom-row {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  margin-top: auto;   /* 🔥 pushes buttons to bottom */
+  gap: 15px;
+  margin-top: auto;
 }
 
-.bottom-row {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-}
+/* Price Badge */
 
 .price {
   background: #ff7a00;
-  padding: 6px 14px;
+  padding: 8px 18px;
   font-weight: bold;
   color: black;
+  border-radius: 30px;
+  font-size: 14px;
 }
 
+/* Add Button */
+
 .add-btn {
-  background: #ff7a00;
+  background: linear-gradient(135deg, #ff7a00, #ff5200);
   color: black;
-  padding: 6px 14px;
+  padding: 8px 18px;
   cursor: pointer;
   border: none;
   font-weight: 600;
+  border-radius: 30px;
+  transition: 0.3s ease;
 }
+
+.add-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(255,122,0,0.5);
+}
+
+/* ================= DECORATIVE LINE ================= */
+
 .decor-line {
   position: relative;
-  width: 90%;
-  margin: 70px auto;
-  border-top: 1px solid #666;
+  width: 85%;
+  margin: 100px auto;
+  border-top: 1px solid rgba(255,255,255,0.2);
 }
 
 .decor-line::before,
 .decor-line::after {
-  content: "❦";
+  content: "✦";
   position: absolute;
-  top: -12px;
-  font-size: 18px;
-  color: #666;
+  top: -13px;
+  font-size: 20px;
+  color: #ff7a00;
 }
 
 .decor-line::before {
@@ -202,4 +277,93 @@
 .decor-line::after {
   right: -10px;
   transform: scaleX(-1);
+}
+/* ================= SLIDER WRAPPER ================= */
+
+.slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* ================= PIZZA GRID ================= */
+
+.pizza-grid {
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  padding: 20px 80px; /* space for arrows */
+}
+
+.pizza-grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* ================= ARROWS ================= */
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff7a00, #ff5200);
+  color: black;
+  z-index: 5;
+  transition: 0.3s ease;
+}
+
+.arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 20px rgba(255,122,0,0.5);
+}
+
+/* Proper alignment */
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+/* Hide scrollbar */
+.pizza-grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* ARROWS */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #e0771a;
+  color: white;
+  border: none;
+  font-size: 28px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s ease;
+}
+
+.arrow:hover {
+  background: #f77f00;
+}
+
+/* Left & Right Position */
+.left-arrow {
+  left: 0;
+}
+
+.right-arrow {
+  right: 0;
 }
