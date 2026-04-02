@@ -1,35 +1,140 @@
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=Outfit:wght@300;400;500;600&display=swap');
 
-/* BODY */
-html, body {
-  width: 100%;
-  min-height: 100%;
-  overflow-x: hidden;   /* allow vertical scroll */
-  scroll-behavior: smooth;
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-color: #f4f6f8;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* ROOT */
 :root {
-  line-height: 1.5;
-  font-weight: 400;
+  --espresso:  #1C1410;
+  --cream:     #F5E6C8;
+  --amber:     #E8A020;
+  --amber-lt:  #F5C060;
+  --amber-dk:  #B87818;
+  --rust:      #C4501A;
+  --sage:      #5A7A5A;
+  --warm-gray: #2E2820;
+  --muted:     #8A7A68;
 }
 
-/* LINKS */
-a {
-  text-decoration: none;
-  color: inherit;
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--espresso);
+  color: var(--cream);
+  font-family: 'Outfit', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-/* BUTTON RESET */
-button {
-  font-family: inherit;
-  cursor: pointer;
-  border: none;
+::selection { background: rgba(232,160,32,0.35); color: var(--cream); }
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--espresso); }
+::-webkit-scrollbar-thumb { background: var(--amber); border-radius: 2px; }
+
+.font-display { font-family: 'Cormorant Garamond', serif; }
+
+/* ── Keyframes ── */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes revealWidth {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+@keyframes spinSlow {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes counterSpin {
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
+  50%       { transform: translateY(-14px) rotate(var(--rot, 0deg)); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 30px rgba(232,160,32,0.2); }
+  50%       { box-shadow: 0 0 70px rgba(232,160,32,0.5), 0 0 120px rgba(232,160,32,0.15); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pingScale {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes borderDraw {
+  from { stroke-dashoffset: 1000; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes cardEntrance {
+  from { opacity: 0; transform: translateY(30px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes successPop {
+  0%   { transform: scale(0) rotate(-180deg); opacity: 0; }
+  60%  { transform: scale(1.2) rotate(10deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes waveBar {
+  0%, 100% { transform: scaleY(0.4); }
+  50%       { transform: scaleY(1); }
+}
+
+/* ── Utility classes ── */
+.anim-fade-up   { animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) both; }
+.anim-fade-in   { animation: fadeIn 0.8s ease both; }
+.anim-slide-l   { animation: slideLeft 0.9s cubic-bezier(0.16,1,0.3,1) both; }
+.anim-slide-r   { animation: slideRight 0.9s cubic-bezier(0.16,1,0.3,1) both; }
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-800 { animation-delay: 0.8s; }
+
+.ticker-track { animation: tickerScroll 22s linear infinite; }
