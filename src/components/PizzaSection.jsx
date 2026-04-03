@@ -124,24 +124,7 @@ export default function PizzaSection({ pizzas, addToCart }) {
   return (
     <div style={{ background: "linear-gradient(180deg, #110C08 0%, #1C1410 20%, #141008 80%, #0E0A06 100%)" }}>
 
-      {/* ══ SCROLLING TICKER ══ */}
-      <div
-        className="overflow-hidden py-3 border-y"
-        style={{ borderColor: "rgba(232,160,32,0.15)", background: "rgba(232,160,32,0.04)" }}
-      >
-        <div className="flex ticker-track whitespace-nowrap" style={{ width: "max-content" }}>
-          {[...Array(3)].map((_, rep) => (
-            <div key={rep} className="flex items-center">
-              {["Free Delivery Above ₹499", "Freshly Baked Daily", "Stone Oven Fired", "Locally Sourced", "30-Min Delivery", "Order Online Now", "100% Fresh Ingredients", "No Preservatives"].map((t, i) => (
-                <span key={`${rep}-${i}`} className="inline-flex items-center gap-4 px-8">
-                  <span className="text-[11px] tracking-[3px] uppercase" style={{ color: "var(--muted)" }}>{t}</span>
-                  <span style={{ color: "var(--amber)", fontSize: "8px" }}>◆</span>
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
+     
 
       {/* ══ OUR PIZZA — EDITORIAL HERO ══ */}
       <section
