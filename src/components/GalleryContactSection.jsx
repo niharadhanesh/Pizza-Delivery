@@ -218,38 +218,142 @@ export default function GalleryContactSection() {
         </div>
       </section>
 
-      {/* ══ FULL-WIDTH CTA BAND ══ */}
-      <div
-        ref={ctaRef}
-        className="relative overflow-hidden"
-        style={{ padding: "72px 0", background: "linear-gradient(135deg, #241A08 0%, #2E2010 50%, #201808 100%)", borderTop: "1px solid rgba(232,160,32,0.12)", borderBottom: "1px solid rgba(232,160,32,0.12)" }}
-      >
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 80% 100% at 50% 50%, rgba(232,160,32,0.07) 0%, transparent 70%)" }} />
+            {/* ══ FULL-WIDTH CTA BAND ══ */}
         <div
-          className="max-w-4xl mx-auto px-6 text-center"
-          style={{ opacity: ctaVis ? 1 : 0, transform: ctaVis ? "none" : "translateY(24px)", transition: "all 1s cubic-bezier(0.16,1,0.3,1)" }}
+          ref={ctaRef}
+          className="relative overflow-hidden"
+          style={{
+            padding: "72px 0",
+            background: "linear-gradient(135deg, #241A08 0%, #2E2010 50%, #201808 100%)",
+            borderTop: "1px solid rgba(232,160,32,0.12)",
+            borderBottom: "1px solid rgba(232,160,32,0.12)"
+          }}
         >
-          <p className="text-[10px] tracking-[5px] uppercase mb-4" style={{ color: "var(--amber)" }}>Limited Time</p>
-          <h2
-            className="font-display mb-4"
-            style={{ fontSize: "clamp(36px, 6vw, 68px)", color: "var(--cream)", fontWeight: 700, lineHeight: 1.1 }}
+          {/* Glow Background */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(circle at 30% 40%, rgba(232,160,32,0.15), transparent 60%), radial-gradient(circle at 70% 60%, rgba(255,255,255,0.05), transparent 70%)"
+            }}
+          />
+
+          {/* Different Pizza Images */}
+          <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png"
+            className="absolute w-14 opacity-20 top-6 left-10 animate-float" />
+
+          <img src="https://cdn-icons-png.flaticon.com/512/1404/1404945.png"
+            className="absolute w-16 opacity-20 bottom-6 right-10 animate-float" />
+
+          <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png"
+            className="absolute w-12 opacity-15 top-12 right-24 animate-float" />
+
+          <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png"
+            className="absolute w-12 opacity-15 bottom-14 left-24 animate-float" />
+
+          <img src="https://cdn-icons-png.flaticon.com/512/3132/3132693.png"
+            className="absolute w-10 opacity-10 top-1/2 right-8 animate-float" />
+
+          {/* Content */}
+          <div
+            className="max-w-4xl mx-auto px-6 text-center relative z-10"
+            style={{
+              opacity: ctaVis ? 1 : 0,
+              transform: ctaVis ? "none" : "translateY(24px)",
+              transition: "all 1s cubic-bezier(0.16,1,0.3,1)"
+            }}
           >
-            Get <span className="italic" style={{ color: "var(--amber)" }}>30% Off</span><br />Your First Order
-          </h2>
-          <p className="text-sm mb-8" style={{ color: "var(--muted)" }}>
-            Use code <strong style={{ color: "var(--amber-lt)", letterSpacing: "0.1em" }}>YOUPIZZA30</strong> at checkout
-          </p>
-          <button
-            className="group relative overflow-hidden rounded-2xl font-semibold text-[11px] tracking-[3px] uppercase px-10 py-4"
-            style={{ background: "linear-gradient(135deg, #E8A020, #B87818)", color: "#1C1410", boxShadow: "0 8px 40px rgba(232,160,32,0.4)", transition: "all 0.4s ease" }}
-            onMouseEnter={e => { e.currentTarget.style.boxShadow = "0 16px 56px rgba(232,160,32,0.6)"; e.currentTarget.style.transform = "translateY(-3px) scale(1.02)"; }}
-            onMouseLeave={e => { e.currentTarget.style.boxShadow = "0 8px 40px rgba(232,160,32,0.4)"; e.currentTarget.style.transform = "none"; }}
-          >
-            <span className="relative z-10">Order Now & Save</span>
-            <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 skew-x-12" style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent)" }} />
-          </button>
+            <p className="text-[10px] tracking-[5px] uppercase mb-4"
+              style={{ color: "var(--amber)", letterSpacing: "6px" }}>
+              Limited Time
+            </p>
+
+            <h2
+              className="font-display mb-4"
+              style={{
+                fontSize: "clamp(36px, 6vw, 68px)",
+                color: "var(--cream)",
+                fontWeight: 700,
+                lineHeight: 1.1
+              }}
+            >
+              Get{" "}
+              <span className="italic relative" style={{ color: "var(--amber)" }}>
+                30% Off
+                <span
+                  className="absolute left-0 bottom-1 w-full h-[6px] blur-md opacity-50"
+                  style={{ background: "var(--amber)" }}
+                />
+              </span>
+              <br />
+              Your First Order
+            </h2>
+
+            <p className="text-sm mb-8" style={{ color: "var(--muted)" }}>
+              Use code{" "}
+              <strong
+                className="px-3 py-1 rounded-md"
+                style={{
+                  color: "var(--amber-lt)",
+                  background: "rgba(232,160,32,0.1)",
+                  letterSpacing: "0.1em"
+                }}
+              >
+                YOUPIZZA30
+              </strong>{" "}
+              at checkout
+            </p>
+
+            <button
+              className="group relative overflow-hidden rounded-2xl font-semibold text-[11px] tracking-[3px] uppercase px-10 py-4"
+              style={{
+                background: "linear-gradient(135deg, #E8A020, #B87818)",
+                color: "#1C1410",
+                boxShadow: "0 8px 40px rgba(232,160,32,0.4)",
+                transition: "all 0.4s ease"
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.boxShadow = "0 16px 56px rgba(232,160,32,0.6)";
+                e.currentTarget.style.transform = "translateY(-3px) scale(1.04)";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.boxShadow = "0 8px 40px rgba(232,160,32,0.4)";
+                e.currentTarget.style.transform = "none";
+              }}
+            >
+              <span className="relative z-10">Order Now & Save</span>
+
+              <span
+                className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 skew-x-12"
+                style={{
+                  background:
+                    "linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)"
+                }}
+              />
+
+              <span
+                className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500"
+                style={{
+                  boxShadow: "0 0 25px rgba(232,160,32,0.7)"
+                }}
+              />
+            </button>
+          </div>
+
+          {/* Floating Animation */}
+          <style>
+            {`
+              @keyframes float {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+                100% { transform: translateY(0px); }
+              }
+              .animate-float {
+                animation: float 6s ease-in-out infinite;
+              }
+            `}
+          </style>
         </div>
-      </div>
 
       {/* ══ CONTACT ══ */}
       <section className="relative overflow-hidden" style={{ padding: "100px 0" }}>
